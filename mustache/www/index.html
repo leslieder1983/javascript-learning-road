@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../dist/bundle.js"></script>
+</head>
+
+<body>
+    <div id="kyleslie"></div>
+
+
+</body>
+<script>
+    let data = {
+        name: 'kyle',
+        age: 14,
+        type: 'reading',
+        hobbies: [{
+                hobby: 'tennis',
+            },
+            {
+                hobby: "football"
+            }, {
+                hobby: "game"
+            }
+        ],
+        game: ['lol', 'csGo', 'king']
+    }
+
+    let templateStr = kyleslie.render(
+        `<h1>姓名:{{name}}</h1> 
+        <br> 
+        {{age}} :{{type}} 
+        {{#hobbies}} 
+        <div>{{hobby}} </div> 
+           {{/hobbies}}  
+        {{#game}} 
+        <div>{{.}} </div>  
+          {{/game}} `,
+        data);
+    let dom = document.getElementById('kyleslie');
+    dom.innerHTML = templateStr;
+</script>
+
+</html>
